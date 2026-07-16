@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>쿼카 티볼 리그 — 치고! 잡고! 던지고!</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="css/ui.css">
+</head>
+<body>
+<div id="stage">
+
+ <div class="screen" id="scr-title">
+  <img class="bgimg" src="assets/bg/bg_gametitle.jpg" alt="">
+  <div id="title-inner">
+   <button class="bigbtn gold" id="title-start">연습 시작하기</button>
+   <div id="title-hint">치고! 잡고! 던지며 배우는 티볼 트레이닝 센터</div>
+  </div>
+ </div>
+
+ <div class="screen" id="scr-tut">
+  <img class="bgimg" src="assets/bg/final_sunset.jpg" alt=""><div class="menudark"></div>
+  <div id="tutwrap">
+   <img id="tut-coach" src="assets/quokka/q_idle.png" alt="">
+   <div id="tut-bubble">
+    <div id="tut-name">쿼카 코치</div>
+    <div id="tut-text"></div>
+    <div id="tut-btns"></div>
+   </div>
+  </div>
+  <button class="backbtn" id="tut-skip" style="left:auto;right:26px">건너뛰기</button>
+ </div>
+
+ <div class="screen" id="scr-select">
+  <img class="bgimg" src="assets/bg/scene_night.jpg" alt=""><div class="menudark"></div>
+  <div class="mhead"><div class="ko">선수 등록</div><div class="en">CHOOSE YOUR TEAM</div>
+   <div class="sub">이름을 쓰고, 함께 뛸 구단 캐릭터를 골라 보세요</div></div>
+  <div id="namebox"><input id="pname" maxlength="10" placeholder="선수 이름을 입력하세요"></div>
+  <div id="teamgrid"></div>
+ </div>
+
+ <div class="screen" id="scr-hub">
+  <img class="bgimg" src="assets/bg/scene_night.jpg" alt=""><div class="menudark"></div>
+  <div id="hub-team"></div>
+  <div id="hubtop"></div>
+  <div class="mhead"><div class="ko">티볼 트레이닝</div><div class="en">TEE-BALL TRAINING</div>
+   <div class="sub">연습 모드를 선택해 실력을 키워 보세요!</div></div>
+  <div id="hubgrid"></div>
+ </div>
+
+ <div class="screen" id="scr-league">
+  <img class="bgimg" src="assets/bg/scene_sunset.jpg" alt=""><div class="menudark"></div>
+  <button class="backbtn" id="lg-back"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>돌아가기</button>
+  <div class="mhead"><div class="ko">쿼카 리그 — 규칙 미션</div><div class="en">RULES MISSION LEAGUE</div>
+   <div class="sub" id="lg-sub"></div></div>
+  <div id="lggrid"></div>
+ </div>
+
+ <div class="screen" id="scr-dex">
+  <img class="bgimg" src="assets/bg/scene_night.jpg" alt=""><div class="menudark"></div>
+  <button class="backbtn" id="dex-back"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>돌아가기</button>
+  <div class="mhead"><div class="ko">T볼 규칙 도감</div><div class="en">RULES ENCYCLOPEDIA</div>
+   <div class="sub" id="dex-sub"></div></div>
+  <div id="dexgrid"></div>
+  <div id="dexview"><img id="dexview-img" src="" alt="">
+   <button class="dxnav" id="dex-prev"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+   <button class="dxnav" id="dex-next"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+   <button class="dxclose" id="dex-close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+ </div>
+
+ <div class="screen" id="scr-cert">
+  <img class="bgimg" src="assets/bg/scene_sunset.jpg" alt=""><div class="menudark"></div>
+  <button class="backbtn" id="cert-back"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>돌아가기</button>
+  <div id="certwrap"></div>
+ </div>
+
+ <div class="screen" id="scr-game">
+  <div id="cam">
+   <img class="bgimg" id="gbg" src="" alt="">
+   <div id="rings"></div><div id="board"></div><div id="reticle"></div>
+   <div id="sprites"></div>
+   <canvas id="fxcv"></canvas>
+  </div>
+  <div id="plate"></div>
+  <div class="hcol" id="hud-left"></div>
+  <div class="hcol" id="hud-right"></div>
+  <div id="corner">
+   <button class="cbtn" id="btn-sound"></button>
+   <button class="cbtn" id="btn-home"><svg viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 10v10h14V10"/></svg></button>
+  </div>
+  <div id="callout"></div>
+  <div id="control"></div>
+  <div id="keyhint"></div>
+  <div id="tipchip"><img src="assets/quokka/q_guard.png" alt=""><div class="tt"></div></div>
+  <div id="mt-banner"></div>
+  <div id="overlay"></div>
+ </div>
+
+ <button class="cbtn" id="g-sound" style="position:absolute;right:24px;bottom:22px;z-index:80"></button>
+
+</div>
+<script src="js/data.js"></script>
+<script src="js/core.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/game_bat.js"></script>
+<script src="js/game_field.js"></script>
+<script src="js/game_throw.js"></script>
+<script src="js/game_power.js"></script>
+<script src="js/game_match.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
